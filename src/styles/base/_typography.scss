@@ -1,0 +1,73 @@
+/*=============================================>>>>>
+= Typography Mixins and Variables =
+===============================================>>>>>*/
+
+// Font weight variables
+// NOTE: Use 400 and 700 weights only
+// $font-weight-thin: 100;
+// $font-weight-extra-light: 200;
+// $font-weight-light: 300;
+$font-weight-regular: 400;
+// $font-weight-medium: 500;
+// $font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+// $font-weight-extra-bold: 800;
+// $font-weight-black: 900;
+
+
+@mixin heading-font() {
+  font-family: 'Lato', sans-serif;
+  font-weight: $font-weight-bold;
+}
+
+@mixin body-font() {
+  font-family: 'Lato', Sans-Serif;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  line-height: 1.6em;
+  @include media-down(mobile) {
+    font-size: 14px;
+  }
+}
+
+@mixin h1 {
+  @include heading-font();
+  font-size: 35px;
+  line-height: 1.1em;
+  @include media-down(large-mobile) {
+    font-size: 30px;
+  }
+}
+
+@mixin h2 {
+  @include heading-font();
+  font-size: 30px;
+  line-height: 1.2em;
+  @include media-down(tablet) {
+    font-size: 30px;
+  }
+}
+
+@mixin h3 {
+  @include heading-font();
+  font-size: 26px;
+  line-height: 1.3em;
+  @include media-down(tablet) {
+    font-size: 22px;
+  }
+}
+
+@mixin h4 {
+  @include heading-font();
+  font-size: 20px;
+  line-height: 1.3em;
+  @include media-down(tablet) {
+    font-size: 18px;
+  }
+}
+
+@mixin h5 {
+  @include heading-font();
+  font-size: 16px;
+  line-height: 1.5em;
+}
