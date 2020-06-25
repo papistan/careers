@@ -1,0 +1,13 @@
+body {
+  background: $white;
+  color: $textcolor;
+}
+
+.wrapper {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 112px 20px;
+  @include media-down(small-mobile) {
+    padding: 80px 10px;
+  }
+}

@@ -1,10 +1,10 @@
 import React from "react"
+import "../../styles/global/styles.scss"
 import "./styles.scss"
 
 const Layout = ({ children }) => (
   <>
-    <h1>hey</h1>
-    <main>{children}</main>
+    <main className="wrapper">{children}</main>
   </>
 )
 
