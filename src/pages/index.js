@@ -29,7 +29,7 @@ const IndexPage = () => {
       <section className="hero-container">
         <div className="center">
           <div className="hero-content">
-            <p className="overline hero">open positions</p>
+            <p className="overline wide">open positions</p>
             <h1>Help us create the future of software</h1>
             <p>
               The ability to make software opens up tremendous creative
@@ -40,7 +40,7 @@ const IndexPage = () => {
             </p>
           </div>
         </div>
-        <div className="center">
+        <div className="center hidden-mobile">
           <div
             className="hero-image"
             onMouseEnter={() => setShowAnimation(true)}

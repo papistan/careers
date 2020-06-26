@@ -32,3 +32,9 @@
   place-items: center;
   display: grid;
 }
+
+.hidden-mobile {
+  @include media-down(tablet) {
+    display: none;
+  }
+}

@@ -35,12 +35,24 @@ h6 {
   }
 }
 
-h1 { @include h1; }
-h2 { @include h2; }
-h3 { @include h3; }
-h4 { @include h4; }
-h5 { @include h5; }
-h6 { font-size: 14px; }
+h1 {
+  @include h1;
+}
+h2 {
+  @include h2;
+}
+h3 {
+  @include h3;
+}
+h4 {
+  @include h4;
+}
+h5 {
+  @include h5;
+}
+h6 {
+  font-size: 14px;
+}
 
 // --------------------------------------------------------------------------
 //   Content Elements
@@ -54,6 +66,27 @@ a {
   }
 }
 
+hr {
+  display: block;
+  margin: 20px 0;
+  border: 0;
+}
+
+blockquote {
+  margin: 0 0 20px;
+  font-family: cambria, georgia, times, serif;
+  font-style: italic;
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+table {
+  width: 100%;
+}
+
 // --------------------------------------------------------------------------
 //   Common Classes
 // --------------------------------------------------------------------------
@@ -65,7 +98,7 @@ a {
   text-transform: capitalize;
   margin-bottom: 10px;
 
-  &.hero {
+  &.wide {
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }

@@ -1,0 +1,20 @@
+.jobs-select-container {
+  min-width: 200px;
+
+  @include media-down(tablet) {
+    min-width: 200px;
+  }
+
+  &:first-of-type {
+    margin-right: 32px;
+  }
+}
+
+.overline.select-label {
+  margin-bottom: 16px;
+}
+
+.fa-caret-down {
+  color: #333333;
+  margin-right: 5px;
+}
