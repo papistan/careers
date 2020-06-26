@@ -4,10 +4,10 @@ body {
 }
 
 .wrapper {
-  max-width: 1160px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 112px 20px;
-  @include media-down(small-mobile) {
+  padding: 112px 40px;
+  @include media-down(tablet) {
     padding: 80px 10px;
   }
 }

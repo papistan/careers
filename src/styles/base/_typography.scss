@@ -18,6 +18,7 @@ $font-weight-medium: 500;
   font-family: "GT Eesti", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
     "Helvetica Neue", sans-serif;
   font-weight: $font-weight-medium;
+  color: $darker-grey;
 }
 
 @mixin body-font() {
@@ -25,8 +26,9 @@ $font-weight-medium: 500;
     "Helvetica Neue", sans-serif;
   font-size: 24px;
   font-weight: $font-weight-regular;
+  color: $textcolor;
   line-height: 1.5em;
-  @include media-down(mobile) {
+  @include media-down(tablet) {
     font-size: 20px;
   }
 }
@@ -35,7 +37,8 @@ $font-weight-medium: 500;
   @include heading-font();
   font-size: 64px;
   line-height: 1.1em;
-  @include media-down(large-mobile) {
+  margin-bottom: 20px;
+  @include media-down(tablet) {
     font-size: 32px;
      line-height: 1.25em;
   }
