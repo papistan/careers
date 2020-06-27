@@ -26,7 +26,7 @@ const JobsSelect = props => {
   })
 
   const handleSelect = selectedOption => {
-    props.eventHandler(selectedOption)
+    props.eventHandler(selectedOption.value)
   }
 
   const customStyles = {

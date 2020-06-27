@@ -1,28 +1,12 @@
 import React from "react"
+import { Department } from "components"
 
-import "./styles.scss"
-
-const Departments = departments => {
-  console.log(departments, "DEPARTMENTS")
-  return (
-    <div className="jobs-select-container">
-      {/* {departments.map(department => (
-        <Department department={department} />
-      ))} */}
-      departmentssss
-    </div>
-  )
-}
-
-export default Departments
-
-const Department = department => (
-  <div>
-    <img
-      src={department.image}
-      alt={department.name}
-      className="department-img"
-    />
-    <h2>{department.name}</h2>
+const Departments = props => (
+  <div className="jobs-select-container">
+    {Object.entries(props.filteredJobsByDepartment).map(departmentArray => (
+      <Department departmentArray={departmentArray} />
+    ))}
   </div>
 )
+
+export default Departments

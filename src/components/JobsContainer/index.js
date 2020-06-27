@@ -5,11 +5,12 @@ import "./styles.scss"
 
 const JobsContainer = props => {
   const [jobs, setJobs] = useState(null)
-  const [filteredJobsByDepartment, setFilteredJobsByDepartment] = useState(null)
   const [departments, setDepartments] = useState(null)
   const [locations, setLocations] = useState(null)
-  const [selectedDepartment, setSelectedDepartment] = useState(null)
-  const [selectedLocation, setSelectedLocation] = useState(null)
+  const [selectedDepartment, setSelectedDepartment] = useState(
+    "All Departments"
+  )
+  const [selectedLocation, setSelectedLocation] = useState("All Locations")
 
   const fetchData = async () => {
     const url =
@@ -54,7 +55,7 @@ const JobsContainer = props => {
             )}
           </div>
           <Departments
-            filteredJobs={filterJobs(
+            filteredJobsByDepartment={filterJobs(
               jobs,
               selectedDepartment,
               selectedLocation
@@ -89,21 +90,48 @@ const matchesLocation = (job, selectedLocation) =>
 const filterJobs = (jobs, selectedDepartment, selectedLocation) => {
   const filteredJobsByDepartment = {}
   const allDepartments = selectedDepartment === "All Departments"
+  const allLocations = selectedLocation == "All Locations"
 
   jobs.forEach(job => {
-    if (allDepartments && matchesLocation(job, selectedLocation)) {
-      filteredJobsByDepartment[job.department] = [
-        ...filteredJobsByDepartment[job.department],
-        job,
-      ]
+    if (allDepartments && allLocations) {
+      if (filteredJobsByDepartment[job.department.name]) {
+        filteredJobsByDepartment[job.department.name] = [
+          ...filteredJobsByDepartment[job.department.name],
+          job,
+        ]
+      } else {
+        filteredJobsByDepartment[job.department.name] = [job]
+      }
+    } else if (allDepartments && matchesLocation(job, selectedLocation)) {
+      if (filteredJobsByDepartment[job.department.name]) {
+        filteredJobsByDepartment[job.department.name] = [
+          ...filteredJobsByDepartment[job.department.name],
+          job,
+        ]
+      } else {
+        filteredJobsByDepartment[job.department.name] = [job]
+      }
+    } else if (job.department.name === selectedDepartment && allLocations) {
+      if (filteredJobsByDepartment[job.department.name]) {
+        filteredJobsByDepartment[job.department.name] = [
+          ...filteredJobsByDepartment[job.department.name],
+          job,
+        ]
+      } else {
+        filteredJobsByDepartment[job.department.name] = [job]
+      }
     } else if (
-      job.department === selectedDepartment &&
+      job.department.name === selectedDepartment &&
       matchesLocation(job, selectedLocation)
     ) {
-      filteredJobsByDepartment[job.department] = [
-        ...filteredJobsByDepartment[job.department],
-        job,
-      ]
+      if (filteredJobsByDepartment[job.department.name]) {
+        filteredJobsByDepartment[job.department.name] = [
+          ...filteredJobsByDepartment[job.department.name],
+          job,
+        ]
+      } else {
+        filteredJobsByDepartment[job.department.name] = [job]
+      }
     }
   })
   return filteredJobsByDepartment

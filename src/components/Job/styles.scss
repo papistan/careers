@@ -1,0 +1,20 @@
+.job-container {
+  width: 100%;
+}
+.job-topborder {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid $border;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.office {
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.office:not(:first-child):before {
+  content: ", ";
+}
