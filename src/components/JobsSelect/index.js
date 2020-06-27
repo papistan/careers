@@ -33,17 +33,24 @@ const JobsSelect = props => {
     option: (provided, state) => ({
       ...provided,
       fontSize: "20px",
-      color: "#666666",
+      color: state.isSelected ? "#666666" : "#666666",
       padding: 5,
     }),
     placeholder: (provided, state) => ({
       ...provided,
       fontSize: "20px",
       lineHeight: "1.25em",
+      color: state.isSelected ? "#666666" : "#666666",
     }),
     indicatorSeparator: (provided, state) => ({
       ...provided,
       display: "none",
+    }),
+    singleValue: (provided, state) => ({
+      ...provided,
+      color: state.isSelected ? "#666666" : "#666666",
+      fontSize: "20px",
+      lineHeight: "1.25em",
     }),
     control: (provided, state) => ({
       ...provided,

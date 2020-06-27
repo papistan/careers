@@ -11,3 +11,6 @@ I chose Gatsby for several reasons:
 1. Find solution for font-specific bug on "TM" in firefox
 2. Select menus - font size/color on active, find solution for react-select container padding
 3. Fix padding between job rows
+
+
+View live at takehome-jobslisting.surge.sh

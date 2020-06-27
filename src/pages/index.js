@@ -27,19 +27,18 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <section className="hero-container">
-        <div className="center">
-          <div className="hero-content">
-            <p className="overline wide">open positions</p>
-            <h1>Help us create the future of software</h1>
-            <p>
-              The ability to make software opens up tremendous creative
-              possibilitties, and we want to empower people to bring thse
-              possibility to life—no matter how ambitious. The good news is that
-              creating software doesn't have to mean writing code. What will you
-              create?
-            </p>
-          </div>
+        <div className="hero-content">
+          <p className="overline wide">open positions</p>
+          <h1>Help us create the future of software</h1>
+          <p>
+            The ability to make software opens up tremendous creative
+            possibilitties, and we want to empower people to bring thse
+            possibility to life—no matter how ambitious. The good news is that
+            creating software doesn't have to mean writing code. What will you
+            create?
+          </p>
         </div>
+
         <div className="center hidden-mobile">
           <div
             className="hero-image"
