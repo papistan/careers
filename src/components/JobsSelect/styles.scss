@@ -12,6 +12,10 @@
 
 .overline.select-label {
   margin-bottom: 16px;
+   padding-top: 80px;
+   @include media-down(tablet) {
+    padding-top: 48px;
+  }
 }
 
 .fa-caret-down {

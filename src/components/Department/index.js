@@ -45,7 +45,7 @@ const Department = props => {
   }
 
   return (
-    <div>
+    <>
       <div className="department-label-container">
         <Img
           fluid={icons[departmentName]}
@@ -55,7 +55,7 @@ const Department = props => {
         <h2>{departmentName}</h2>
       </div>
         <Jobs jobs={props.departmentArray[1]} />
-    </div>
+    </>
   )
 }
 

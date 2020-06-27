@@ -1,13 +1,9 @@
-.jobs-container {
-  padding-top: 80px;
-}
-
 .jobs-selects {
   display: flex;
   flex-wrap: wrap;
   color: $textcolor;
   justify-content: center;
   @include media-down(tablet) {
-   justify-content: start;
+    justify-content: start;
   }
 }

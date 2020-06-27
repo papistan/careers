@@ -1,7 +1,16 @@
 .department-label-container {
   display: flex;
-  margin-top: 96px;
-  margin-bottom: 64px;
+  padding-top: 96px;
+  padding-bottom: 64px;
+
+   @include media-down(tablet) {
+    padding-top: 80px;
+    padding-bottom: 48px;
+
+    &:not(:first-of-type) {
+      padding-top: 64px;
+    }
+  }
 
   h2 {
     padding-left: 15px;
