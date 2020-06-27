@@ -31,6 +31,10 @@
 .center {
   place-items: center;
   display: grid;
+
+  @include media-down(tablet) {
+    place-items: start;
+  }
 }
 
 .hidden-mobile {

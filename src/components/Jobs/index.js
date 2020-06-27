@@ -2,10 +2,10 @@ import React from "react"
 import { Job } from "components"
 import "./styles.scss"
 
-const Jobs = props => (
+const Jobs = ({ jobs }) => (
   <div className="jobs-container2">
-    {props.jobs.map(job => (
-      <Job job={job} />
+    {jobs.map((job, index) => (
+      <Job job={job} index={index} />
     ))}
   </div>
 )

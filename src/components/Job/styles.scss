@@ -2,12 +2,85 @@
   width: 100%;
 }
 .job-topborder {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 2px solid $border;
+  height: 2px;
+  background: $border;
   margin: 1em 0;
-  padding: 0;
+  position: relative;
+
+  &.engineering.index-0 {
+    background: $lighter-blue;
+
+    &:after,
+    &:before {
+      content: " ";
+      position: absolute;
+      background: $lighter-blue;
+      height: 2px;
+      width: 10px;
+    }
+
+    &:after {
+      right: -3px;
+      top: -3px;
+      transform: rotate(45deg);
+    }
+
+    &:before {
+      right: -3px;
+      bottom: -3px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &.customer.index-0 {
+    background: $blue;
+
+    &:after,
+    &:before {
+      content: " ";
+      position: absolute;
+      background: $blue;
+      height: 2px;
+      width: 10px;
+    }
+
+    &:after {
+      right: -3px;
+      top: -3px;
+      transform: rotate(45deg);
+    }
+
+    &:before {
+      right: -3px;
+      bottom: -3px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &.marketing.index-0 {
+    background: $red;
+
+    &:after,
+    &:before {
+      content: " ";
+      position: absolute;
+      background: $red;
+      height: 2px;
+      width: 10px;
+    }
+
+    &:after {
+      right: -3px;
+      top: -3px;
+      transform: rotate(45deg);
+    }
+
+    &:before {
+      right: -3px;
+      bottom: -3px;
+      transform: rotate(-45deg);
+    }
+  }
 }
 
 .office {
