@@ -91,47 +91,29 @@ const filterJobs = (jobs, selectedDepartment, selectedLocation) => {
   const filteredJobsByDepartment = {}
   const allDepartments = selectedDepartment === "All Departments"
   const allLocations = selectedLocation == "All Locations"
+  const addJobToFilteredJobs = job => {
+    if (filteredJobsByDepartment[job.department.name]) {
+      filteredJobsByDepartment[job.department.name] = [
+        ...filteredJobsByDepartment[job.department.name],
+        job,
+      ]
+    } else {
+      filteredJobsByDepartment[job.department.name] = [job]
+    }
+  }
 
   jobs.forEach(job => {
     if (allDepartments && allLocations) {
-      if (filteredJobsByDepartment[job.department.name]) {
-        filteredJobsByDepartment[job.department.name] = [
-          ...filteredJobsByDepartment[job.department.name],
-          job,
-        ]
-      } else {
-        filteredJobsByDepartment[job.department.name] = [job]
-      }
+      addJobToFilteredJobs(job)
     } else if (allDepartments && matchesLocation(job, selectedLocation)) {
-      if (filteredJobsByDepartment[job.department.name]) {
-        filteredJobsByDepartment[job.department.name] = [
-          ...filteredJobsByDepartment[job.department.name],
-          job,
-        ]
-      } else {
-        filteredJobsByDepartment[job.department.name] = [job]
-      }
+      addJobToFilteredJobs(job)
     } else if (job.department.name === selectedDepartment && allLocations) {
-      if (filteredJobsByDepartment[job.department.name]) {
-        filteredJobsByDepartment[job.department.name] = [
-          ...filteredJobsByDepartment[job.department.name],
-          job,
-        ]
-      } else {
-        filteredJobsByDepartment[job.department.name] = [job]
-      }
+      addJobToFilteredJobs(job)
     } else if (
       job.department.name === selectedDepartment &&
       matchesLocation(job, selectedLocation)
     ) {
-      if (filteredJobsByDepartment[job.department.name]) {
-        filteredJobsByDepartment[job.department.name] = [
-          ...filteredJobsByDepartment[job.department.name],
-          job,
-        ]
-      } else {
-        filteredJobsByDepartment[job.department.name] = [job]
-      }
+      addJobToFilteredJobs(job)
     }
   })
   return filteredJobsByDepartment
