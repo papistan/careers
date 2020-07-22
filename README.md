@@ -1,4 +1,4 @@
-## TECH STACK NOTES chose ### TECH STACK NOTES 
+## TECH STACK NOTES
 
 I chose Gatsby as the static site generator for several reasons:
   - Highly performant - prefetching, code-splitting by page, gatsby-image plugin, static site
